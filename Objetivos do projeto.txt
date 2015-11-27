@@ -1,0 +1,18 @@
+Objetivos urgente:
+->Sudoku jogavel
+|->escolher posição com setas ou WSDA
+|->computador gera o tabuleiro
+  |->Número de posições geradas definidas pelo usuário
+|->Configurações posiveis
+   |->Mostrar possiblidades de posição atual
+   |->Avisar sobre número colocado em posição errada
+   |->Avisar sobre posições com 0 possibilidades
+   |->apenas deixar o usuário inserir números possíveis   
+->Interface
+|->função geradora de menus, retorna a opção escolhida pela usuário (int ou String - a ser decidido)
+|->função que gera o tabuleiro
+|->função que mostra as opções habilitadas pelo usuário
+->Criação de aŕvore de jogadas
+|->arvore de jogadas irá obedecer o modelo binário, visto que a jogada do usuário pode apenas ser correta ou errada
+Objetivos futuros:
+->Resolver o Sudoku
