@@ -11,4 +11,6 @@ typedef struct puzzle
 }Puzze;
 
 
-int GM_addNumerber();
+int GM_addNumerber(Puzze* jogo, Location* local, int number);
+
+int GM_removeNumber(Puzze* jogo, Location* local, int number);
