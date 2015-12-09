@@ -9,15 +9,15 @@ Puzzle* createNewPuzzle(void)
     for ( a = 0; a < 9; a++)
     {
         novo->puzzle[a] = (int*)malloc(sizeof(int)*9);
-        novo->puzzle[0] = 0;
-        novo->puzzle[1] = 0;
-        novo->puzzle[2] = 0;
-        novo->puzzle[3] = 0;
-        novo->puzzle[4] = 0;
-        novo->puzzle[5] = 0;
-        novo->puzzle[6] = 0;
-        novo->puzzle[7] = 0;
-        novo->puzzle[8] = 0;
+        novo->puzzle[a][0] = 0;
+        novo->puzzle[a][1] = 0;
+        novo->puzzle[a][2] = 0;
+        novo->puzzle[a][3] = 0;
+        novo->puzzle[a][4] = 0;
+        novo->puzzle[a][5] = 0;
+        novo->puzzle[a][6] = 0;
+        novo->puzzle[a][7] = 0;
+        novo->puzzle[a][8] = 0;
     }
     novo->numLivresLinha = createIntegerList();
     novo->numLivresColuna = createIntegerList();
@@ -97,7 +97,6 @@ int addNumberInPuzzle(Puzzle* jogo, Location* local, int number)
         if(numberExistInIntegerList(jogo->numLivresBloco, number) == 1 && numberExistInIntegerList(jogo->numLivresLinha, number) == 1 && numberExistInIntegerList(jogo->numLivresColuna,number) == 1)
         {
             jogo->puzzle[local->posY][local->posX] = number;
-            printf("%d T", jogo->puzzle[local->posY][local->posX]);
             jogo->numLivresLinha = removeNumberOfIntegerList(jogo->numLivresLinha, number);
             jogo->numLivresColuna = removeNumberOfIntegerList(jogo->numLivresColuna, number);
             jogo->numLivresBloco = removeNumberOfIntegerList(jogo->numLivresBloco, number);
@@ -174,15 +173,41 @@ void generateSudoku(Puzzle* sudoku, int num){
     int i, x, y, tam = 4, n_elem = 9, elem, aux;
 	srand(time(NULL));
 	Location* local;
+	int* possivel;
 	for(i = 0; i < num; i++){
         x = rand()%n_elem;
         y = rand()%n_elem;
+
         if(sudoku->puzzle[y][x] == 0){
+            elem = rand()%n_elem + 1;
             local = createLocation(x,y);
-            elem = rand()%n_elem+1;
+            possivel = returnPossibilityesOfPosition(sudoku, &tam, local);
+
             aux = addNumberInPuzzle(sudoku, local, elem);
+            if(aux == 0){
+                freeLocation(local);
+            }
         }else{
             i--;
         }
+
     }
+}
+
+int* returnPossibilityesOfPosition(Puzzle* jogo, int* tam, Location* local){
+    *tam = 0;
+    int * possibilidades = (int*)malloc(9*sizeof(int));
+    int  aux  ;
+    for(aux = 1; aux <=9; aux++){
+        if(numberExistInIntegerList(jogo->numLivresBloco, aux) == 1 && numberExistInIntegerList(jogo->numLivresLinha, aux) == 1 && numberExistInIntegerList(jogo->numLivresColuna,aux) == 1){
+            possibilidades[*tam] = aux;
+            *tam = *tam + 1;
+        }
+    }
+    if(*tam == 0){
+        free(possibilidades);
+        return possibilidades;
+    }
+    realloc(possibilidades, *tam);
+    return possibilidades;
 }

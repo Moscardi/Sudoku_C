@@ -11,10 +11,10 @@ typedef struct game
 }Puzzle;
 
 typedef struct config{
-    int mostrarPossibilidades;
+    int numeroPosicoesGeradas;
     int mostrarQuantoFalta;
     int removerJogada;
-    int numeroPosicoesGeradas;
+    int mostrarPossibilidades;
 }Config;
 
 Config* createConfig(void);
@@ -26,3 +26,5 @@ int addNumberInPuzzle(Puzzle* jogo, Location* local, int number);
 int removeNumberOfPuzzle(Puzzle* jogo, Location* local, int number);
 
 void freePuzzle(Puzzle* jogo);
+
+int* returnPossibilityesOfPosition(Puzzle* jogo, int* tam, Location* local);

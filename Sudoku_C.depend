@@ -15,11 +15,11 @@
 	<stdlib.h>
 	<time.h>
 
-1449642481 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Interface.c
+1449648576 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Interface.c
 	"getch.h"
 	"Sudoku.h"
 
-1449638251 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Interface.h
+1449646832 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Interface.h
 	"Sudoku.h"
 
 1449632080 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/StringRow.h
@@ -30,22 +30,22 @@
 	<stdlib.h>
 	<stdio.h>
 
-1449642524 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/main.c
+1449648314 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/main.c
 	"Interface.h"
 
 1449629972 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/GenerateMenuStrings.h
 	"Interface.h"
 
-1449634127 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/String.c
+1449634242 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/String.c
 	"String.h"
 
 1449633278 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/StringRow.c
 	"StringRow.h"
 
-1449640188 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Sudoku.c
+1449649646 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Sudoku.c
 	"Sudoku.h"
 
-1449638663 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Sudoku.h
+1449650777 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Sudoku.h
 	"IntegerList.h"
 	"Location.h"
 

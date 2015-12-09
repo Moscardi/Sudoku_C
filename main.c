@@ -1,31 +1,64 @@
 #include "Interface.h"
 
 
-int main(int argc, char const *argv[]) {
-		int option = 0;
-		Config* configaracao = createConfig();
-		apresentation();
+int main(int argc, char const *argv[])
+{
+    int option = 0;
+    Config* configaracao = createConfig();
+    apresentation();
 
-		do {
-			option = generateInitialMenu();
-			printf("%d", option);
-			if(option == 0){
-                starGame(configaracao);
-			}else if(option == 1){
-			}else if(option == 2){
-                system("exit");
-			}
-		} while(option != '2');
+    do
+    {
+        option = generateInitialMenu();
+
+        if(option == 0)
+        {
+            starGame(configaracao);
+        }
+        else if(option == 1)
+        {
+            generateConfigMenu(configaracao);
+        }
+        else if(option == 2)
+        {
+            break;
+        }
+    }
+    while(option != '2');
 }
 
-void starGame(Config* configuracao){
+void starGame(Config* configuracao)
+{
     Puzzle* jogo = createNewPuzzle();
     generateSudoku(jogo,configuracao->numeroPosicoesGeradas);
     Location* atual = createLocation(0,0);
     char digito;
-    do{
+    do
+    {
+        system("clear");
         showPuzzle(jogo->puzzle, atual);
         digito = getch();
+        if( (digito == 'W' || digito == 'w') && atual->posY > 0)
+        {
+            atual->posY = atual->posY - 1;
+            continue;
+        }
+        else if( (digito == 'S' || digito == 's') && atual->posY < 8 )
+        {
+            atual->posY = atual->posY + 1;
+            continue;
+        }
+        else if( (digito == 'A' || digito == 'a') && atual->posX > 0)
+        {
+            atual->posX = atual->posX -1;
+            continue;
+        }
+        else if( (digito == 'D' || digito == 'd') && atual->posX < 8 )
+        {
+            atual->posX = atual->posX + 1;
+            continue;
+        }
 
-    }while( digito != 'W' && digito != 'w' && digito != 'A' && digito != 'a' && digito != 'S' && digito != 's' && digito != 'D' && digito != 'd' && digito >= '0' && digito <= '9');
+    }
+    while( 1 == 1);
 }
