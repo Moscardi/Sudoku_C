@@ -1,0 +1,101 @@
+# depslib dependency file v1.0
+1449599242 source:c:\users\lucas\desktop\sudoku_c\integerlist.c
+	"IntegerList.h"
+
+1449599104 c:\users\lucas\desktop\sudoku_c\integerlist.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449618336 source:c:\users\lucas\desktop\sudoku_c\interface.c
+	"Interface.h"
+	"StringRow.h"
+
+1449615019 c:\users\lucas\desktop\sudoku_c\interface.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449619302 source:c:\users\lucas\desktop\sudoku_c\location.c
+	"Location.h"
+
+1449619314 c:\users\lucas\desktop\sudoku_c\location.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449621739 source:c:\users\lucas\desktop\sudoku_c\main.c
+	"Sudoku.h"
+
+1449624115 c:\users\lucas\desktop\sudoku_c\sudoku.h
+	"IntegerList.h"
+	"Location.h"
+
+1449481702 source:c:\users\lucas\desktop\sudoku_c\string.c
+	"String.h"
+
+1449614700 c:\users\lucas\desktop\sudoku_c\string.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449614897 source:c:\users\lucas\desktop\sudoku_c\stringrow.c
+	"StringRow.h"
+
+1449614897 c:\users\lucas\desktop\sudoku_c\stringrow.h
+	"String.h"
+	<string.h>
+
+1449623603 source:c:\users\lucas\desktop\sudoku_c\sudoku.c
+	"Sudoku.h"
+
+1449599242 source:c:\users\lucas\desktop\sudoku_c2\integerlist.c
+	"IntegerList.h"
+
+1449599104 c:\users\lucas\desktop\sudoku_c2\integerlist.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449631338 source:c:\users\lucas\desktop\sudoku_c2\interface.c
+	"Interface.h"
+	"StringRow.h"
+
+1449615019 c:\users\lucas\desktop\sudoku_c2\interface.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449614897 c:\users\lucas\desktop\sudoku_c2\stringrow.h
+	"String.h"
+	<string.h>
+
+1449614700 c:\users\lucas\desktop\sudoku_c2\string.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449628570 source:c:\users\lucas\desktop\sudoku_c2\location.c
+	"Location.h"
+
+1449628599 c:\users\lucas\desktop\sudoku_c2\location.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449631848 source:c:\users\lucas\desktop\sudoku_c2\main.c
+	"Sudoku.h"
+
+1449625166 c:\users\lucas\desktop\sudoku_c2\sudoku.h
+	"IntegerList.h"
+	"Location.h"
+
+1449481702 source:c:\users\lucas\desktop\sudoku_c2\string.c
+	"String.h"
+
+1449614897 source:c:\users\lucas\desktop\sudoku_c2\stringrow.c
+	"StringRow.h"
+
+1449630724 source:c:\users\lucas\desktop\sudoku_c2\sudoku.c
+	"Sudoku.h"
+
