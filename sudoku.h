@@ -1,16 +1,19 @@
-#include "listas.h"
-#include "location.h"
+#include "IntegerList.h"
+#include "Location.h"
 
-typedef struct puzzle
+typedef struct game
 {
 	int posVazias;
 	int** puzzle;
-	ListaInteiro* numLivresLinha;
-	ListaInteiro* numLIvresColuna;
-	ListaInteiro* numLivresBloco;
-}Puzze;
+	IntegerList** numLivresLinha;
+	IntegerList** numLivresColuna;
+	IntegerList** numLivresBloco;
+}Puzzle;
 
+Puzzle* createNewPuzzle(void);
 
-int GM_addNumerber(Puzze* jogo, Location* local, int number);
+int addNumberInPuzzle(Puzzle* jogo, Location* local, int number);
 
-int GM_removeNumber(Puzze* jogo, Location* local, int number);
+int removeNumberOfPuzzle(Puzzle* jogo, Location* local, int number);
+
+void freePuzzle(Puzzle* jogo);
