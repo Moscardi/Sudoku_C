@@ -53,110 +53,72 @@ void freePuzzle(Puzzle* jogo)
     jogo = NULL;
 }
 
-int addNumberInPuzzle(Puzzle* jogo, Location* local, int number)
-{
-    if(jogo != NULL && local != NULL && number > 0 && number < 10 && local->posX >= 0 && local->posX < 9 && local->posY >= 0 && local->posY < 9)
-    {
-        int aux;
-        if(local->posY <= 2 && local->posX <= 2)
-        {
-            aux = 0;
-        }
-        else if(local->posY <=2 && local->posX <= 5)
-        {
-            aux = 1;
-        }
-        else if (local->posY <=2 && local->posX <= 8)
-        {
-            aux = 2;
-        }
-        else if (local->posY <=5 && local->posX <= 2)
-        {
-            aux = 3;
-        }
-        else if (local->posY <=5 && local->posX <= 5)
-        {
-            aux = 4;
-        }
-        else if (local->posY <=5 && local->posX <= 8)
-        {
-            aux = 5;
-        }
-        else if (local->posY <=8 && local->posX <= 2)
-        {
-            aux = 6;
-        }
-        else if (local->posY <=8 && local->posX <= 5)
-        {
-            aux = 7;
-        }
-        else if (local->posY <=8 && local->posX <= 8)
-        {
-            aux = 8;
-        }
-        if(numberExistInIntegerList(jogo->numLivresBloco, number) == 1 && numberExistInIntegerList(jogo->numLivresLinha, number) == 1 && numberExistInIntegerList(jogo->numLivresColuna,number) == 1)
-        {
-            jogo->puzzle[local->posY][local->posX] = number;
-            jogo->numLivresLinha = removeNumberOfIntegerList(jogo->numLivresLinha, number);
-            jogo->numLivresColuna = removeNumberOfIntegerList(jogo->numLivresColuna, number);
-            jogo->numLivresBloco = removeNumberOfIntegerList(jogo->numLivresBloco, number);
-            return 1;
-        }
+int addNumberInPuzzle(Puzzle* jogo, Location* local, int number){
+  if(jogo != NULL && local != NULL && number > 0 && number < 10 && local->posX >= 0 && local->posX < 9 && local->posY >= 0 && local->posY < 9){
+    int aux;
+    if(local->posY <= 2 && local->posX <= 2){
+      aux = 0;
+    }else if(local->posY <=2 && local->posX <= 5){
+      aux = 1;
+    }else if (local->posY <=2 && local->posX <= 8) {
+      aux = 2;
+    }else if (local->posY <=5 && local->posX <= 2) {
+      aux = 3;
+    } else if (local->posY <=5 && local->posX <= 5) {
+      aux = 4;
+    }else if (local->posY <=5 && local->posX <= 8) {
+      aux = 5;
+    } else if (local->posY <=8 && local->posX <= 2) {
+      aux = 6;
+    }else if (local->posY <=8 && local->posX <= 5) {
+      aux = 7;
+    } else if (local->posY <=8 && local->posX <= 8) {
+      aux = 8;
     }
-    return 0;
+    if(numberExistInIntegerList(jogo->numLivresBloco[aux], number) == 1 && numberExistInIntegerList(jogo->numLivresLinha[local->posY], number) == 1 && numberExistInIntegerList(jogo->numLivresColuna[local->posX],number) == 1){
+      jogo->puzzle[local->posY][local->posX] = number;
+      jogo->posVazias--;
+      jogo->numLivresLinha[local->posY] = removeNumberOfIntegerList(jogo->numLivresLinha[local->posY], number);
+      jogo->numLivresColuna[local->posX] = removeNumberOfIntegerList(jogo->numLivresColuna[local->posX], number);
+      jogo->numLivresBloco[aux] = removeNumberOfIntegerList(jogo->numLivresBloco[aux], number);
+      return 1;
+    }
+  }
+  return 0;
 }
 
-int removeNumberOfPuzzle(Puzzle* jogo, Location* local, int number)
-{
-    if(jogo != NULL && local != NULL && number > 0 && number < 10 && local->posX >= 0 && local->posX < 9 && local->posY >= 0 && local->posY < 9)
-    {
-        int aux;
-        if(local->posY <= 2 && local->posX <= 2)
-        {
-            aux = 0;
-        }
-        else if(local->posY <=2 && local->posX <= 5)
-        {
-            aux = 1;
-        }
-        else if (local->posY <=2 && local->posX <= 8)
-        {
-            aux = 2;
-        }
-        else if (local->posY <=5 && local->posX <= 2)
-        {
-            aux = 3;
-        }
-        else if (local->posY <=5 && local->posX <= 5)
-        {
-            aux = 4;
-        }
-        else if (local->posY <=5 && local->posX <= 8)
-        {
-            aux = 5;
-        }
-        else if (local->posY <=8 && local->posX <= 2)
-        {
-            aux = 6;
-        }
-        else if (local->posY <=8 && local->posX <= 5)
-        {
-            aux = 7;
-        }
-        else if (local->posY <=8 && local->posX <= 8)
-        {
-            aux = 8;
-        }
-        if(numberExistInIntegerList(jogo->numLivresBloco, number) == 0 && numberExistInIntegerList(jogo->numLivresLinha, number) == 0 && numberExistInIntegerList(jogo->numLivresColuna,number) == 0)
-        {
-            jogo->puzzle[local->posY][local->posX] = 0;
-            jogo->numLivresLinha = addNumberInIntegerList(jogo->numLivresLinha, number);
-            jogo->numLivresColuna = addNumberInIntegerList(jogo->numLivresColuna, number);
-            jogo->numLivresBloco = addNumberInIntegerList(jogo->numLivresBloco, number);
-            return 1;
-        }
+int removeNumberOfPuzzle(Puzzle* jogo, Location* local, int number){
+  if(jogo != NULL && local != NULL && number > 0 && number < 10 && local->posX >= 0 && local->posX < 9 && local->posY >= 0 && local->posY < 9){
+    int aux;
+    if(local->posY <= 2 && local->posX <= 2){
+      aux = 0;
+    }else if(local->posY <=2 && local->posX <= 5){
+      aux = 1;
+    }else if (local->posY <=2 && local->posX <= 8) {
+      aux = 2;
+    }else if (local->posY <=5 && local->posX <= 2) {
+      aux = 3;
+    } else if (local->posY <=5 && local->posX <= 5) {
+      aux = 4;
+    }else if (local->posY <=5 && local->posX <= 8) {
+      aux = 5;
+    } else if (local->posY <=8 && local->posX <= 2) {
+      aux = 6;
+    }else if (local->posY <=8 && local->posX <= 5) {
+      aux = 7;
+    } else if (local->posY <=8 && local->posX <= 8) {
+      aux = 8;
     }
-    return 0;
+    if(numberExistInIntegerList(jogo->numLivresBloco[aux], number) == 0 && numberExistInIntegerList(jogo->numLivresLinha[local->posY], number) == 0 && numberExistInIntegerList(jogo->numLivresColuna[local->posX],number) == 0){
+      jogo->puzzle[local->posY][local->posX] = 0;
+      jogo->posVazias++;
+      jogo->numLivresLinha[local->posY] = addNumberInIntegerList(jogo->numLivresLinha[local->posY], number);
+      jogo->numLivresColuna[local->posX] = addNumberInIntegerList(jogo->numLivresColuna[local->posX], number);
+      jogo->numLivresBloco[aux] = addNumberInIntegerList(jogo->numLivresBloco[aux], number);
+      return 1;
+    }
+  }
+  return 0;
 }
 
 Config* createConfig(void)

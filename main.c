@@ -58,6 +58,11 @@ void starGame(Config* configuracao)
             atual->posX = atual->posX + 1;
             continue;
         }
+        else if(digito >= '1' && digito <= '9'){
+            if(addNumberInPuzzle(jogo,atual,digito - 48) == 0){
+                printf("Jogada invalida, posição em conflito");
+            }
+        }
 
     }
     while( 1 == 1);

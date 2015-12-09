@@ -5,9 +5,9 @@ typedef struct game
 {
 	int posVazias;
 	int** puzzle;
-	IntegerList* numLivresLinha;
-	IntegerList* numLivresColuna;
-	IntegerList* numLivresBloco;
+	IntegerList** numLivresLinha;
+	IntegerList** numLivresColuna;
+	IntegerList** numLivresBloco;
 }Puzzle;
 
 typedef struct config{
