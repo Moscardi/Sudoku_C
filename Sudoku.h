@@ -5,15 +5,24 @@ typedef struct game
 {
 	int posVazias;
 	int** puzzle;
-	IntegerList** numLivresLinha;
-	IntegerList** numLIvresColuna;
-	IntegerList** numLivresBloco;
+	IntegerList* numLivresLinha;
+	IntegerList* numLivresColuna;
+	IntegerList* numLivresBloco;
 }Puzzle;
+
+typedef struct config{
+    int mostrarPossibilidades;
+    int mostrarQuantoFalta;
+    int removerJogada;
+    int numeroPosicoesGeradas;
+}Config;
+
+Config* createConfig(void);
 
 Puzzle* createNewPuzzle(void);
 
-int addNumberInPuzzle(Puzze* jogo, Location* local, int number);
+int addNumberInPuzzle(Puzzle* jogo, Location* local, int number);
 
-int removeNumberOfPuzzle(Puzze* jogo, Location* local);
+int removeNumberOfPuzzle(Puzzle* jogo, Location* local, int number);
 
-void freePuzzle(Puzze* jogo);
+void freePuzzle(Puzzle* jogo);

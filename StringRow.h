@@ -1,20 +1,34 @@
 #include "String.h"
 #include <string.h>
 
-typedef struct row_string
+typedef struct no_row_string
 {
 	String* string;
-	struct row_string* proximo;
-}RowString;
+	struct no_row_string* proximo;
+}NodeStringRow;
 
-RowString* createStringRow(void);
+typedef struct row_string{
+	NodeStringRow* atual;
+	NodeStringRow* inicial;
+}StringRow;
 
-void addStringRow(RowString* row,String* texto);
 
-int stringRowExist(RowString* row, String* texto);
+StringRow* createStringRow(void);
 
-void freeStringRow(RowString* row);
+void addStringRow(StringRow* row,String* texto);
 
-String* removeStringOfRow(RowString* row);
+int stringRowExist(StringRow* row, String* texto);
 
-int stringRowIsEmpity(RowString* row);
+void freeStringRow(StringRow* row);
+
+String* removeStringOfRow(StringRow* row);
+
+int stringRowIsEmpity(StringRow* row);
+
+void restartStringRow(StringRow* row);
+
+String* returnAtualStringOfRow(StringRow* row);
+
+int atualStringRowIsEmpity(StringRow* row);
+
+int contStringRow(StringRow* row);

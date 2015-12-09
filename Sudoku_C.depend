@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1449599242 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/IntegerList.c
+	"IntegerList.h"
+
+1449614854 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/IntegerList.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449640048 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Location.c
+	"Location.h"
+
+1449640061 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Location.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1449642481 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Interface.c
+	"getch.h"
+	"Sudoku.h"
+
+1449638251 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Interface.h
+	"Sudoku.h"
+
+1449632080 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/StringRow.h
+	"String.h"
+	<string.h>
+
+1449630511 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/String.h
+	<stdlib.h>
+	<stdio.h>
+
+1449642524 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/main.c
+	"Interface.h"
+
+1449629972 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/GenerateMenuStrings.h
+	"Interface.h"
+
+1449634127 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/String.c
+	"String.h"
+
+1449633278 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/StringRow.c
+	"StringRow.h"
+
+1449640188 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Sudoku.c
+	"Sudoku.h"
+
+1449638663 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/Sudoku.h
+	"IntegerList.h"
+	"Location.h"
+
+1449634047 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/GenerateMenuStrings.c
+	"GenerateMenuStrings.h"
+
+1449630381 source:/home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/getch.c
+	"getch.h"
+
+1435267639 /home/Moscardi/Dropbox/UTFPR/segundo semestre/algoritimos 2/Sudoku_C/getch.h
+	<termios.h>
+	<unistd.h>
+	<stdio.h>
+

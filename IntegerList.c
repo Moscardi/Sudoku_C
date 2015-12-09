@@ -4,7 +4,7 @@ IntegerList* createIntegerList(void){
 	return NULL;
 }
 
-void addNumberInIntegerList(IntegerList* list, int number){
+IntegerList* addNumberInIntegerList(IntegerList* list, int number){
 	IntegerList* novo = (IntegerList*)malloc(sizeof(IntegerList));
 	novo->valor = number;
 	novo->proximo = list;
@@ -17,7 +17,7 @@ int numberExistInIntegerList(IntegerList* list, int number){
 		if(aux->valor == number){
 			return 1;
 		}
-		aux = aux->next;
+		aux = aux->proximo;
 	}
 	return 0;
 }
@@ -25,38 +25,27 @@ int numberExistInIntegerList(IntegerList* list, int number){
 void freeIntegerList(IntegerList* list){
 	IntegerList* aux;
 	while(list != NULL){
-		aux = list->next;
+		aux = list->proximo;
 		free(list);
 		list = aux;
 	}
 	list == NULL;
 }
 
-int removeNumberOfIntegerList(IntegerList* list, int number){
-	if(list != NULL){
-		IntegerList* aux;
-		if(list->valor == number){
-			aux = list;
-			list = list->proximo;
-			free(aux);
-			return 1;
+IntegerList* removeNumberOfIntegerList(IntegerList* list, int number){
+	IntegerList* aux = NULL;
+	IntegerList* v = list;	
+	while((v != NULL) && (v->valor != number)){
+			aux = v;
+			v = v->proximo;
 		}
-		IntegerList* anterior = list;
-		aux = list->proximo;
-		while (aux != NULL && aux->valor != number) {
-			if(aux->valor == number){
-				anterior->proximo = aux->proximo;
-				free(aux);
-				return 1;
-			}
-			anterior = aux;
-			aux = aux->proximo;
-		}
-		return 0;
-	}
-	return 0;
+		if(v == NULL){return list;}
+		if(aux == NULL){list = v->proximo;}
+		else{aux->proximo = v->proximo;}
+		free(v);
+		return list;
 }
 
-int IntegerListIsEmpity(IntegerList* list){
+int IntegerListIsEmpty(IntegerList* list){
 	return (list == NULL);
 }

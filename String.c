@@ -1,10 +1,11 @@
 #include "String.h"
 
-void ScreateString(void){
+String* createString(void){
     return NULL;
 }
 
-void addCaracterOfString(String* texto, char letra){
+int addCaracterOfString(String* texto, char letra){
+
   if(letra != '\0'){
     String* nova = (String*)malloc(sizeof(String));
     nova->proximo = NULL;

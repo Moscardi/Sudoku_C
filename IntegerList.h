@@ -1,4 +1,6 @@
-#include "StringRow.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 typedef struct lista_inteiro
 {
@@ -8,12 +10,12 @@ typedef struct lista_inteiro
 
 IntegerList* createIntegerList(void);
 
-void addNumberInIntegerList(IntegerList* list, int number);
+IntegerList* addNumberInIntegerList(IntegerList* list, int number);
 
 int numberExistInIntegerList(IntegerList* list, int number);
 
 void freeIntegerList(IntegerList* list);
 
-int removeNumberOfIntegerList(IntegerList* list, int number);
+IntegerList* removeNumberOfIntegerList(IntegerList* list, int number);
 
-int IntegerListIsEmpity(IntegerList* list);
+int IntegerListIsEmpty(IntegerList* list);

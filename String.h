@@ -1,12 +1,14 @@
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef struct string{
   char caracter;
   struct string* proximo;
 }String;
 
-void createString(void);
+String* createString(void);
 
-void addCaracterOfString(String* texto, char letra);
+int addCaracterOfString(String* texto, char letra);
 
 int stringIsEmpity(String* texto);
 

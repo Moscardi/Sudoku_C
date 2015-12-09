@@ -1,4 +1,6 @@
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 typedef struct location
 {
@@ -8,4 +10,8 @@ typedef struct location
 
 Location* createLocation(int x, int y);
 
-void LO_free(Location* local);
+void editXLocation(Location* local,int x);
+
+void editYLocation(Location* local,int y);
+
+void freeLocation(Location* local);
